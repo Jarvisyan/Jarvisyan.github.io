@@ -13,6 +13,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
+    # 添加这个配置
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -26,15 +28,17 @@ jobs:
         with:
           python-version: '3.x'
           
+      # 先配置 Pages
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+          
       - name: Install dependencies
         run: |
           pip install mkdocs-material
           
       - name: Build site
         run: mkdocs build
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
