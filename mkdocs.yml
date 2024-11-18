@@ -1,0 +1,39 @@
+# 网站基本信息
+site_name: 我的学习笔记
+site_description: 个人学习笔记和心得分享
+site_author: 你的名字
+
+# 主题设置
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant  # 即时加载
+    - navigation.tracking  # 导航跟踪
+    - navigation.tabs  # 顶部导航标签
+    - navigation.top  # 返回顶部按钮
+    - search.suggest  # 搜索建议
+    - search.highlight  # 搜索高亮
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+# 导航设置
+nav:
+  - 首页: index.md
+  - Python学习:
+    - 基础知识: python/basics.md
+    - 进阶技巧: python/advanced.md
+  - 工具使用:
+    - Git基础: tools/git.md
+  - 关于: about.md
