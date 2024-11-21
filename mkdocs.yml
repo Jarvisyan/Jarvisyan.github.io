@@ -1,37 +1,45 @@
-# 网站基本信息
-site_name: 我的学习笔记
-site_description: 个人学习笔记和心得分享
-site_author: 你的名字
+# mkdocs.yml 配置文件
+# 参考文档：https://mkdocs-like-code.readthedocs.io/zh-cn/latest/MkDocs-advanced-operations/theme-configuration/#_1
 
-# 主题设置
+# 网站基本信息
+site_name: 我的学习笔记        # 网站的标题
+site_description: 个人学习笔记和心得分享  # 网站的描述，用于SEO
+site_author: 你的名字          # 网站作者
+
+# 主题设置 The available installed themes are: mkdocs, readthedocs, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen,
+           #lux, materia, minty, pulse, sandstone, simplex, slate, solar, spacelab, superhero, united, yeti, material
 theme:
-  name: material
+  name: material    # 主题名称 https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes
   language: zh
   features:
-    - navigation.instant  # 即时加载
+    - navigation.instant  # 即时加载; 如果不设置 navigation.instant，网站的导航链接在点击时会导致整个页面重新加载
     - navigation.tracking  # 导航跟踪
     - navigation.tabs  # 顶部导航标签
     - navigation.top  # 返回顶部按钮
     - search.suggest  # 搜索建议
     - search.highlight  # 搜索高亮
+    - content.code.copy   # 代码块添加复制按钮
+    - content.tabs.link   # 多语言代码块联动
   palette:
-    - scheme: default
-      primary: indigo
+    - scheme: default       # 默认亮色主题
+      primary: teal #brown #teal #indigo      # 主要颜色（用于顶部导航栏、链接等）
+      accent: indigo       # 强调颜色（用于按钮、滚动条等）
+      toggle:              # 主题切换配置
+        icon: material/brightness-7    # 在亮色模式下显示的图标（太阳图标）
+        name: Switch to dark mode      # 鼠标悬停时显示的提示文本（切换到暗色模式）
+    - scheme: slate        # 暗色主题配置
+      primary: teal #brown #indigo
       accent: indigo
       toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+        icon: material/brightness-3    # 在暗色模式下显示的图标（月亮图标）
+        name: Switch to light mode     # 鼠标悬停时显示的提示文本（切换到亮色模式）
 
 # 导航设置
-nav:
-  - 首页: index.md
-  - Python学习:
+nav:                        # 网站导航结构配置
+  - 首页: index.md          # 一级导航："页面名称: 对应的文件路径"
+  - 漫谈: 
+    - 2024-11-21  Markdown风格的网页博客搭建(上): tips/blog.md
+  - Python学习:             # 带有子页面的导航项
     - 基础知识: python/basics.md
     - 进阶技巧: python/advanced.md
   - 工具使用:
