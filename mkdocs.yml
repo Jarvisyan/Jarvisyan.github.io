@@ -38,10 +38,5 @@ theme:
 nav:                        # 网站导航结构配置
   - 首页: index.md          # 一级导航："页面名称: 对应的文件路径"
   - 漫谈: 
-    - 2024-11-21  Markdown风格的网页博客搭建(上): tips/blog.md
-  - Python学习:             # 带有子页面的导航项
-    - 基础知识: python/basics.md
-    - 进阶技巧: python/advanced.md
-  - 工具使用:
-    - Git基础: tools/git.md
+    - 2024-11-21 Markdown风格的网页博客搭建(上): tips/blog.md
   - 关于: about.md
